@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { TextField, Button, Box, Alert } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
 const LoginForm = () => {
+  const [error, setError] = useState({
+    status: false,
+    message: "",
+    type: "",
+  });
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -15,14 +21,21 @@ const LoginForm = () => {
 
     if (accuretData.email && accuretData.password) {
       console.log(accuretData);
+      setError({ status: true, message: "Login Success", type: "success" });
+      document.getElementById("login-form").reset();
     } else {
-      console.log("All fields are require");
+      setError({ status: true, message: "All fields are require", type: "error" });
     }
   };
 
   return (
     <>
-      <Box component="form" noValidate sx={{ mt: 1 }} id="login-form" onSubmit={handleSubmit}>
+      <Box component="form" noValidate sx={{ m: 1 }} id="login-form" onSubmit={handleSubmit}>
+        {error.status && (
+          <Alert severity={error.type} sx={{ mt: 2 }}>
+            {error.message}
+          </Alert>
+        )}
         <TextField margin="normal" required fullWidth id="email" name="email" label="Email Address" />
         <TextField margin="normal" required fullWidth id="password" name="password" label="Password" type="password" />
 
