@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Grid, Card, Box, Tabs, Tab } from "@mui/material";
 import Pic1 from "../../../images/form.png";
+import LoginForm from "./LoginForm";
 
 const TabPanel = (props) => {
   const { children, value, index } = props;
@@ -44,7 +45,7 @@ const Login = () => {
                 </Tabs>
               </Box>
               <TabPanel value={value} index={0}>
-                Login
+                <LoginForm />
               </TabPanel>
               <TabPanel value={value} index={1}>
                 Registation
