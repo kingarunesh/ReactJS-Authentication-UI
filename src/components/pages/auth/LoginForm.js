@@ -5,6 +5,19 @@ import { NavLink } from "react-router-dom";
 const LoginForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const data = new FormData(event.currentTarget);
+
+    const accuretData = {
+      email: data.get("email"),
+      password: data.get("password"),
+    };
+
+    if (accuretData.email && accuretData.password) {
+      console.log(accuretData);
+    } else {
+      console.log("All fields are require");
+    }
   };
 
   return (
