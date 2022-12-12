@@ -50,7 +50,7 @@ const LoginForm = () => {
                         Login
                     </Button>
                 </Box>
-                <NavLink to="/">Forgot Password ?</NavLink>
+                <NavLink to="/sendpasswordresetemail">Forgot Password ?</NavLink>
             </Box>
         </>
     );
