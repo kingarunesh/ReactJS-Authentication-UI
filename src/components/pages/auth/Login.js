@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Grid, Card, Box, Tabs, Tab } from "@mui/material";
+import { Grid, Card, Box, Tabs, Tab, Typography } from "@mui/material";
 import Pic1 from "../../../images/form.png";
 import LoginForm from "./LoginForm";
 import Register from "./Register";
+import { ShoppingBag } from "@mui/icons-material";
 
 const TabPanel = (props) => {
     const { children, value, index } = props;
@@ -51,6 +52,12 @@ const Login = () => {
                             <TabPanel value={value} index={1}>
                                 <Register />
                             </TabPanel>
+                        </Box>
+                        <Box textAlign="center" sx={{ mt: 2 }}>
+                            <ShoppingBag sx={{ color: "#1976d2", fontSize: 100 }} />
+                            <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+                                Classimax
+                            </Typography>
                         </Box>
                     </Card>
                 </Grid>

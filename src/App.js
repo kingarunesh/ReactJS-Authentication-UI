@@ -4,6 +4,7 @@ import ResetPassword from "./components/pages/auth/ResetPassword";
 import SendPasswordResetEmail from "./components/pages/auth/SendPasswordResetEmail";
 import Contact from "./components/pages/Contact";
 import Dashboard from "./components/pages/Dashboard";
+import ErrorPage from "./components/pages/ErrorPage";
 import Home from "./components/pages/Home";
 import Layout from "./components/pages/Layout";
 
@@ -20,6 +21,7 @@ function App() {
                         <Route path="reset" element={<ResetPassword />} />
                     </Route>
                     <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="*" element={<ErrorPage />} />
                 </Routes>
             </BrowserRouter>
         </>
