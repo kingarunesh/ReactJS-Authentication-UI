@@ -28,7 +28,9 @@ const LoginForm = () => {
 
             document.getElementById("login-form").reset();
 
-            navigate("/");
+            setTimeout(() => {
+                navigate("/dashboard");
+            }, 2000);
         } else {
             setError({ status: true, message: "All fields are require", type: "error" });
         }

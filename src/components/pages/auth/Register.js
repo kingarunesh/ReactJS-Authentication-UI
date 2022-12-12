@@ -33,7 +33,9 @@ const Register = () => {
                 setError({ status: true, message: "Didn't match password and confirm password", type: "error" });
             }
 
-            navigate("/");
+            setTimeout(() => {
+                navigate("/dashboard");
+            }, 2000);
         } else {
             setError({ status: true, message: "All fields are require", type: "error" });
         }
