@@ -22,7 +22,7 @@ const SendPasswordResetEmail = () => {
 
             setError({ status: true, message: "Password reset email sent. Please check your mail", type: "success" });
 
-            document.getElementById("password-reset-form").reset();
+            document.getElementById("password-reset-send-form").reset();
         } else {
             setError({ status: true, message: "Please enter valid email.", type: "error" });
         }
@@ -32,7 +32,7 @@ const SendPasswordResetEmail = () => {
         <>
             <Grid container justifyContent="center">
                 <Grid item sm={6} xs={12}>
-                    <Box component="form" noValidate sx={{ m: 1 }} id="password-reset-form" onSubmit={handleSubmit}>
+                    <Box component="form" noValidate sx={{ m: 1 }} id="password-reset-send-form" onSubmit={handleSubmit}>
                         {error.status && (
                             <Alert severity={error.type} sx={{ mt: 2 }}>
                                 {error.message}
