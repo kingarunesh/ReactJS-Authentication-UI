@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, Button, Box, Alert } from "@mui/material";
+import { TextField, Button, Box, Alert, CircularProgress, Stack } from "@mui/material";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
@@ -40,9 +40,14 @@ const LoginForm = () => {
         <>
             <Box component="form" noValidate sx={{ m: 1 }} id="login-form" onSubmit={handleSubmit}>
                 {error.status && (
-                    <Alert severity={error.type} sx={{ mt: 2 }}>
-                        {error.message}
-                    </Alert>
+                    <div>
+                        <Box sx={{ display: "flex", justifyContent: "center" }}>
+                            <CircularProgress />
+                        </Box>
+                        <Alert severity={error.type} sx={{ mt: 2 }}>
+                            {error.message}
+                        </Alert>
+                    </div>
                 )}
                 <TextField margin="normal" required fullWidth id="email" name="email" label="Email Address" />
                 <TextField margin="normal" required fullWidth id="password" name="password" label="Password" type="password" />
